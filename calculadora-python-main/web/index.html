@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Python Web</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fa-solid fa-calculator"></i> Calculadora Python Web</h1>
+      <p>Operações Básicas e Histórico Completo de Cálculos</p>
+    </header>
+
+    <main class="calculator-grid">
+      <!-- Painel da Calculadora -->
+      <section class="calc-card">
+        <div class="display">
+          <div id="expression" class="expression"></div>
+          <div id="result" class="result">0</div>
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-action" onclick="clearAll()">AC</button>
+          <button class="btn btn-action" onclick="deleteLast()"><i class="fa-solid fa-backspace"></i></button>
+          <button class="btn btn-action" onclick="appendOp('/')">÷</button>
+          <button class="btn btn-operator" onclick="appendOp('*')">×</button>
+
+          <button class="btn" onclick="appendNum('7')">7</button>
+          <button class="btn" onclick="appendNum('8')">8</button>
+          <button class="btn" onclick="appendNum('9')">9</button>
+          <button class="btn btn-operator" onclick="appendOp('-')">-</button>
+
+          <button class="btn" onclick="appendNum('4')">4</button>
+          <button class="btn" onclick="appendNum('5')">5</button>
+          <button class="btn" onclick="appendNum('6')">6</button>
+          <button class="btn btn-operator" onclick="appendOp('+')">+</button>
+
+          <button class="btn" onclick="appendNum('1')">1</button>
+          <button class="btn" onclick="appendNum('2')">2</button>
+          <button class="btn" onclick="appendNum('3')">3</button>
+          <button class="btn btn-equals" onclick="calculate()">=</button>
+
+          <button class="btn" onclick="appendNum('0')">0</button>
+          <button class="btn" onclick="appendNum('.')">.</button>
+          <button class="btn btn-operator" onclick="appendOp('%')">%</button>
+        </div>
+      </section>
+
+      <!-- Painel de Histórico -->
+      <section class="history-card">
+        <div class="history-header">
+          <h2><i class="fa-solid fa-clock-rotate-left"></i> Histórico de Operações</h2>
+          <button class="btn-clear-history" onclick="clearHistory()"><i class="fa-solid fa-trash"></i> Limpar</button>
+        </div>
+        <div id="history-list" class="history-list">
+          <p class="empty-msg">Nenhum cálculo realizado ainda.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
